@@ -2,7 +2,7 @@
  * @Author: li_x
  * @LastEditors: Do not edit
  * @Date: 2019-09-20 10:03:39
- * @LastEditTime: 2019-09-20 10:03:39
+ * @LastEditTime: 2019-09-20 12:26:26
  * @Version: 1.0
  * @Description: 描述
  * @Company: 济南广域软件
@@ -16,11 +16,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>可视化图形编辑工具</title>
+    <link rel="stylesheet" href="./css/u-reset.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-
+    <main class="borderbox">
+        <div id="leftBox">
+            <div class="title">组件</div>
+            <div class="tembox borderbox">
+                <div id="tem1" class="tem" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/1.jpg" alt="" draggable="false">
+                </div>
+            </div>
+        </div>
+        <div id="rightBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </main>
 </body>
+<script src="./static/vue.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/index.js"></script>
 
 </html>

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/*
+ * @Author: li_x
+ * @LastEditors: Do not edit
+ * @Date: 2019-09-20 10:44:19
+ * @LastEditTime: 2019-09-20 15:25:26
+ * @Version: 1.0
+ * @Description: 描述
+ * @Company: 济南广域软件
+ * @Copyright: Copyright (c) Jnwat Soft
+ * @Remarks: 备注
+ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  user-select: none;
+}
+
+.borderbox {
+  box-sizing: border-box;
+}
+
+.posa {
+  position: absolute;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+}
+main .tembox {
+  margin-top: 42px;
+  padding-top: 10px;
+  overflow: auto;
+  height: 100%;
+}
+main .tem {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  padding: 5px;
+}
+main .tem img {
+  width: 100%;
+  height: 100%;
+}
+main .border {
+  border: #ccc 2px dashed;
+}
+main #leftBox {
+  height: 100%;
+  width: 240px;
+  float: left;
+  border: 2px solid #ccc;
+  position: relative;
+}
+main #leftBox .title {
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+}
+main #rightBox {
+  margin-left: 255px;
+  height: 100%;
+  border: 2px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=index.css.map */
