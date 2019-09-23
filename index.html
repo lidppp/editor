@@ -2,7 +2,7 @@
  * @Author: li_x
  * @LastEditors: Do not edit
  * @Date: 2019-09-20 10:03:39
- * @LastEditTime: 2019-09-20 12:26:26
+ * @LastEditTime: 2019-09-23 11:07:54
  * @Version: 1.0
  * @Description: 描述
  * @Company: 济南广域软件
@@ -24,17 +24,79 @@
 <body>
     <main class="borderbox">
         <div id="leftBox">
-            <div class="title">组件</div>
+            <div class="title">组件 <button class="saveShow">保存文件</button></div>
             <div class="tembox borderbox">
                 <div id="tem1" class="tem" draggable="true" ondragstart="drag(event)">
                     <img src="./img/1.jpg" alt="" draggable="false">
                 </div>
             </div>
         </div>
-        <div id="rightBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="rightBox" style="background:url('./img/bj.jpg') no-repeat center center/100% auto "
+            ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="tem1" class="tem posa" data="id:41" draggable="false" ondragstart="drag(event)">
+                <img src="./img/1.jpg" alt="" draggable="false">
+            </div>
+        </div>
     </main>
+    <nav class="borderbox">
+        <div>
+            <div class="flexbox">
+                <span>背景图</span>
+                <input id="bjputh" type="text" placeholder="背景图片路径">
+            </div>
+            <div class="flexbox">
+                <span>编号</span>
+                <input id="name" type="text" placeholder="元素的ID">
+                <p>
+                    必须以字母 A-Z 或 a-z 开头
+                    <br>
+                    其后的字符：字母、数字、连字符(-)、下划线(_)、冒号(:)
+                    <br>
+                    不可以出现中文
+                </p>
+            </div>
+
+            <div class="flexbox">
+                <span>X</span>
+                <input id="x" type="text" placeholder="元素的x轴坐标">
+            </div>
+            <div class="flexbox">
+                <span>Y</span>
+                <input id="y" type="text" placeholder="元素的y轴坐标">
+            </div>
+            <div class="flexbox">
+                <span>宽度</span>
+                <input id="w" type="text" placeholder="元素的宽度">
+            </div>
+            <div class="flexbox">
+                <span>高度</span>
+                <input id="h" type="text" placeholder="元素的高度">
+            </div>
+            <div class="flexbox">
+                <span>数据</span>
+                <textarea name="" id="data" cols="30" rows="10"
+                    placeholder="元素数据&#10;采用键值对形式&#10;如:id:'10',name:'A-90'&#10;注意标点为英文标点"></textarea>
+            </div>
+            <button>保存</button>
+        </div>
+        <div class="btn">
+            &lt;
+        </div>
+    </nav>
+    <div class="saveBox">
+        <div class="save">
+            <span>文件名:&nbsp;&nbsp;</span><input class="flieName" type="text" placeholder="请输入文件名">
+
+            <textarea name="" class="borderbox saveText" id="" cols="30" rows="10" style="resize:none"
+                readonly>给你看个大宝贝</textarea>
+            <div style="text-align: right">
+                <button class="savebtn">复制到剪切板</button>
+            </div>
+        </div>
+    </div>
 </body>
-<script src="./static/vue.js"></script>
+<script src="./static/jquery.min.js"></script>
+<script src="./static/layer.js"></script>
 <script src="./js/config.js"></script>
 <script src="./js/index.js"></script>
 
