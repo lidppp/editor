@@ -2,7 +2,7 @@
  * @Author: li_x
  * @LastEditors: Do not edit
  * @Date: 2019-09-20 10:03:57
- * @LastEditTime: 2019-09-23 14:42:15
+ * @LastEditTime: 2019-09-23 17:16:54
  * @Version: 1.0
  * @Description: 描述
  * @Company: 济南广域软件
@@ -170,6 +170,7 @@ function down(ev) {
         // 如果在放大缩小的范围之内
         if (mouseElX >= disW - 15 && mouseElY >= disH - 15 && that.classList.contains('border')) {
             // 这时候等比例放大
+            // 拖拽右下角
 
             that.style.width = disW + setX - disL + "px"
             that.style.height = disH + setY - disT + "px"
@@ -177,12 +178,35 @@ function down(ev) {
             inpH.value = getStyle(that, 'height')
 
         } else if (mouseElX <= 15 && mouseElY <= 15 && that.classList.contains('border')) {
+            // 拖拽左上角
             // 这时候 等比例放大
             // x轴加多少,left减多少
             // y轴加多少,top减多少
             that.style.width = disW - setX + disL + "px"
             that.style.height = disH - setY + disT + "px"
             that.style.top = disT + setY - disT + "px"
+            that.style.left = disL + setX - disL + "px"
+            inpW.value = getStyle(that, 'width')
+            inpH.value = getStyle(that, 'height')
+            inpX.value = getStyle(that, 'left')
+            inpY.value = getStyle(that, 'top')
+        } else if (mouseElY <= 15 && mouseElX >= disW - 15 && that.classList.contains('border')) {
+            // 拖拽右上角  鼠标样式: ne-resize
+            // 左下角不变
+            // 这时候 等比例放大
+            that.style.width = disW + setX - disL + "px"
+            that.style.height = disH - setY + disT + "px"
+            that.style.top = disT + setY - disT + "px"
+            inpW.value = getStyle(that, 'width')
+            inpH.value = getStyle(that, 'height')
+            inpX.value = getStyle(that, 'left')
+            inpY.value = getStyle(that, 'top')
+        } else if (mouseElX <= 15 && mouseElY >= disH - 15 && that.classList.contains('border')) {
+            // 拖拽左下角  鼠标样式: ne-resize
+            // 右上角不变
+            // 这时候 等比例放大
+            that.style.width = disW - setX + disL + "px"
+            that.style.height = disH + setY - disT + "px"
             that.style.left = disL + setX - disL + "px"
             inpW.value = getStyle(that, 'width')
             inpH.value = getStyle(that, 'height')
@@ -259,6 +283,10 @@ function move(ev) {
         if ((mouseElX >= disW - 15 && mouseElY >= disH - 15) || (mouseElX <= 15 && mouseElY <= 15)) {
             // 这时候改变鼠标样式为 \ 的
             this.style.cursor = 'se-resize '
+        } else if ((mouseElX <= 15 && mouseElY >= disH - 15) || (mouseElY <= 15 && mouseElX >= disW - 15)) {
+            // 这时候改变鼠标样式为  / 的
+            this.style.cursor = 'ne-resize '
+
         } else if (mouseElX >= disW - 15 || mouseElX <= 15) {
             // 这时候改变鼠标样式为  - 的
             this.style.cursor = 'w-resize '
